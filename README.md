@@ -16,3 +16,5 @@ Send to android device a text to paste into the clipboard through adb
 
 I recommend to insert clipper as new environment variable (set as variable name 'clipper' and as value the full path of the application clippe.exe) so you can execute the script on every place or simply with the shell
 win + r -> clipper "done"
+
+If you have any problems with the clipper.exe you can simply use the batch file clipper.bat
