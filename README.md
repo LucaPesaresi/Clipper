@@ -3,8 +3,9 @@ Send to android device a text to paste into the clipboard through adb
 
 # Installation
 
-1. Install apk file into own device
-2. Activate USB Debug from Developer Option
+1. Extract archive clipper.zip
+2. Install apk file into own device
+3. Activate USB Debug from Developer Option
 
 # Uses
 
