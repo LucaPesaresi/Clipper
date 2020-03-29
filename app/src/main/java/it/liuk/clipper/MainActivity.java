@@ -15,15 +15,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        CopyText(ReadFileContent("sample.txt"));
-        deleteFile("sample.txt");
+        CopyText(ReadFileContent("/data/local/tmp/sample.txt"));
+        deleteFile("/data/local/tmp/sample.txt");
         int pid = android.os.Process.myPid();
         android.os.Process.killProcess(pid);
         System.exit(0);
     }
-    
+
     private void CopyText(String text) {
        if (!text.isEmpty()) {
             clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -35,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
    
     private String ReadFileContent(String filename){
         try {
-            FileInputStream fileInputStream = openFileInput(filename);
+            /*FileInputStream fileInputStream = openFileInput(filename);*/
+            FileInputStream fileInputStream = new FileInputStream(filename);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             StringBuilder stringBuilder = new StringBuilder();
